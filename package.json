@@ -18,6 +18,7 @@
         "html-webpack-plugin": "*",
         "v-transform": "*",
         "webpack": "*",
-        "webpack-cli": "*"
+        "webpack-cli": "*",
+        "webpack-dev-server": "*"
     }
 }
