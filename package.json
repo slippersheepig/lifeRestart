@@ -17,6 +17,7 @@
         "core-js": "*",
         "html-webpack-plugin": "*",
         "v-transform": "*",
-        "webpack": "*"
+        "webpack": "*",
+        "webpack-cli": "*"
     }
 }
