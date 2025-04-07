@@ -1,11 +1,11 @@
-FROM alpine AS builder
-RUN apk add --no-cache git
+FROM node:alpine AS builder
+RUN apk add --no-cache git && npm install -g pnpm
 RUN git clone https://github.com/VickScarlet/lifeRestart.git /lr
+WORKDIR /lr
+RUN pnpm install && pnpm xlsx2json
+RUN pnpm run build
 
 FROM node:alpine
-ENV NPM_CONFIG_LOGLEVEL info
 WORKDIR /usr/src/app
 COPY --from=builder /lr .
-COPY package.json .
-RUN npm install && npm run build
-CMD ["npm", "start"]
+CMD ["pnpm", "start"]
