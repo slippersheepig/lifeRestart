@@ -9,4 +9,4 @@ FROM node:alpine
 RUN npm install -g pnpm
 WORKDIR /usr/src/app
 COPY --from=builder /lr .
-CMD ["pnpm", "start"]
+CMD ["pnpm", "exec", "vite", "preview", "--host"]
