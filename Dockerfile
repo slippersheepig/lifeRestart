@@ -5,8 +5,6 @@ WORKDIR /lr
 RUN pnpm install && pnpm xlsx2json
 RUN pnpm run build
 
-FROM node:alpine
-RUN npm install -g pnpm
-WORKDIR /usr/src/app
-COPY --from=builder /lr .
-CMD ["pnpm", "exec", "vite", "preview", "--host"]
+FROM nginx:alpine-slim
+COPY --from=builder /lr/dist /usr/share/nginx/html
+CMD ["nginx", "-g", "daemon off;"]
