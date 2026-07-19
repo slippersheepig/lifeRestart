@@ -34,5 +34,3 @@ jobs:
             linux/arm64
           push: true
           tags: sheepgreen/liferestart:latest
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
