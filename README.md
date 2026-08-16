@@ -1,2 +1,3 @@
 # lifeRestart
-https://github.com/VickScarlet/lifeRestart
+
+Upstream repository: https://github.com/VickScarlet/remake
